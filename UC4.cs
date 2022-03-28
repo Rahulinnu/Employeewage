@@ -1,43 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace EmpWage
 {
     public class UC4
     {
-        public UC4()
+        public void UsCa4()
         {
-            Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
-
-            const int isFullTime = 1;
-            const int isPartTime = 2;
-            const int wagePerHour = 20;
-            int empWorkHour = 0;
-            int empDailyWage = 0;
+            Console.WriteLine("Welcome to UC4");
             Random random = new Random();
-            int check = random.Next(0, 3);
-            switch (check)
+            int empCheck = random.Next(0, 3);
+            int is_fulltime = 1;
+            int is_parttime = 2;
+
+            int totalWorkingHour, wagePerHour = 20, dailyWage = 0;
+            switch (empCheck)
             {
-                case isFullTime:
-                    Console.WriteLine("Employee is Present for Full Time");
-                    empWorkHour = 8;
+                case 1:
+                    totalWorkingHour = 8;
+                    Console.WriteLine("Employee is Present");
                     break;
-
-                case isPartTime:
-                    Console.WriteLine("Employee is Present for Part Time");
-                    empWorkHour = 4;
+                case 2:
+                    totalWorkingHour = 4;
+                    Console.WriteLine("Employee is Parttime Worker");
                     break;
-
                 default:
+                    totalWorkingHour = 0;
                     Console.WriteLine("Employee is Absent");
-                    empWorkHour = 0;
                     break;
-            }
 
-            empDailyWage = empWorkHour * wagePerHour;
-            Console.WriteLine($"\nEmployee Daily Wage : {empDailyWage}\n");
+
+            }
+            dailyWage = wagePerHour * totalWorkingHour;
+            Console.WriteLine("Total wage is : " + dailyWage);
             Console.ReadLine();
         }
     }
