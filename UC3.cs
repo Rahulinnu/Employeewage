@@ -1,41 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace EmpWage
 {
     public class UC3
     {
-        public UC3()
+        public void UsCa3()
         {
-            Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
-
-            const int isFullTime = 1;
-            const int isPartTime = 2;
-            const int wagePerHour = 20;
-            int empWorkHour = 0;
-            int empDailyWage = 0;
+            Console.WriteLine("Welcome to UC3");
             Random random = new Random();
-            int check = random.Next(0, 3);
-            if (check == isFullTime)
+            int is_fulltime = 1;
+            int is_parttime = 2;
+            int totalWorkingHour = 8;
+            int partTimeWorkingHour = 4;
+            int wagePerHour = 20;
+            int dailyWage = 0;
+            int empCheck = random.Next(0, 3);
+
+            if (empCheck == is_fulltime)
             {
-                Console.WriteLine("Employee is Present for Full Time");
-                empWorkHour = 8;
+                Console.WriteLine("Employee is Present");
+                dailyWage = totalWorkingHour * wagePerHour;
+                Console.WriteLine("Total wage of a day: " + dailyWage);
             }
-            else if (check == isPartTime)
+            else if (empCheck == is_parttime)
             {
-                Console.WriteLine("Employee is Present for Part Time");
-                empWorkHour = 4;
+                Console.WriteLine("Employee is parttime worker");
+                dailyWage = (partTimeWorkingHour * wagePerHour);
+                Console.WriteLine("Total wage of halfday: " + dailyWage);
             }
             else
             {
                 Console.WriteLine("Employee is Absent");
-                empWorkHour = 0;
+                dailyWage = totalWorkingHour * 0;
+                Console.WriteLine("Total wage of a day: " + dailyWage);
+
             }
-            empDailyWage = empWorkHour * wagePerHour;
-            Console.WriteLine($"\nEmployee Daily Wage : {empDailyWage}\n");
             Console.ReadLine();
+
         }
     }
 }
