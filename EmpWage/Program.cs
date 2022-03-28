@@ -12,35 +12,24 @@ namespace EmpWage
         {
             Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
 
-            const int isFullTime = 1;
-            const int isPartTime = 2;
-            const int wagePerHour = 20;
-            int empWorkHour = 0;
-            int empDailyWage = 0;
-            Random random = new Random();
-            int check = random.Next(0, 3);
-            switch (check)
-            {
+            UC1 usc1 = new UC1();
+            usc1.UsCa1();
 
-                case isFullTime:
-                    Console.WriteLine("Employee is Present for Full Time");
-                    empWorkHour = 8;
-                    break;
+            UC2 usc2 = new UC2();
+            usc2.UsCa2();
 
-                case isPartTime:
-                    Console.WriteLine("Employee is Present for Part Time");
-                    empWorkHour = 4;
-                    break;
+            UC3 usc3 = new UC3();
+            usc3.UsCa3();
 
-                default:
-                    Console.WriteLine("Employee is Absent");
-                    empWorkHour = 0;
-                    break;
-            }
+            UC4 usc4 = new UC4();
+            usc4.UsCa4();
 
-            empDailyWage = empWorkHour * wagePerHour;
-            Console.WriteLine($"\nEmployee Daily Wage : {empDailyWage}\n");
-            Console.ReadLine();
+            UC5 usc5 = new UC5();
+            usc5.UsCa5();
+
+            UC6 usc6 = new UC6();
+            usc6.UsCa6();
+
         }
     }
 }
