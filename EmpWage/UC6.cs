@@ -1,70 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace EmpWage
 {
     public class UC6
     {
-        public UC6()
+        public void UsCa6()
         {
-            Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
+            Console.WriteLine("Welcome to UC6");
+            int isFullTime = 1;
+            int isPartTime = 2;
+            int totalWorkingday = 0, empratePerHour = 20, totalhour = 0;
+            int num_of_workingDay = 20, max_Hour_In_a_month = 100, empHrs = 0;
+            int totalSalary = 0;
 
-            const int IS_FULL_TIME = 1;
-            const int IS_PART_TIME = 2;
-            const int WAGE_PER_HOUR = 20;
-            const int MAX_WORKING_DAYS = 20;
-            const int MAX_WORK_HOURS = 100;
-            int totalMonthWage = 0, empWorkHour = 0, empDailyWage = 0, empTotalHour = 0, empTotalWorkDays = 0;
+            while (totalhour <= max_Hour_In_a_month && totalWorkingday < num_of_workingDay)
 
-            Random random = new Random();
-            while (empTotalHour <= MAX_WORK_HOURS && empTotalWorkDays <= MAX_WORKING_DAYS)
             {
-                int check = random.Next(0, 3);
-                switch (check)
+                totalWorkingday++;
+                Random random = new Random();
+                int randomCheck = random.Next(0, 3);
+
+                switch (randomCheck)
                 {
-                    case IS_FULL_TIME:
-                        Console.WriteLine("Employee is Present for Full Time");
-                        empWorkHour = 8;
+                    case 1:
+                        empHrs = 8;
+                        Console.WriteLine("Employee is Present");
                         break;
-
-                    case IS_PART_TIME:
-                        Console.WriteLine("Employee is Present for Part Time");
-                        empWorkHour = 4;
+                    case 2:
+                        empHrs = 4;
+                        Console.WriteLine("Employee is doing parttime:");
                         break;
-
                     default:
-                        Console.WriteLine("Employee is Absent");
-                        empWorkHour = 0;
+                        empHrs = 0;
+                        Console.WriteLine("Employee is absent");
                         break;
                 }
-
-
-                empDailyWage = empWorkHour * WAGE_PER_HOUR;
-                Console.WriteLine($"Employee Daily Wage for Day {empTotalWorkDays} : {empDailyWage}\n");
-                totalMonthWage += empDailyWage;
-                empTotalWorkDays++;
-                empTotalHour += empWorkHour;
-
+                totalhour += empHrs;
+                Console.WriteLine("Day :" + totalWorkingday + "Daily worked hour", +empHrs);
             }
-            if (empTotalHour > MAX_WORK_HOURS)
-            {
-                int a = empTotalHour - MAX_WORK_HOURS;
-                empTotalHour -= a;
-                int wage = a * WAGE_PER_HOUR;
-                totalMonthWage -= wage;
-            }
-
-            if (empTotalWorkDays > MAX_WORKING_DAYS)
-            {
-                empTotalWorkDays -= 1;
-            }
-            Console.WriteLine($"\nEmployee total working days  : {empTotalWorkDays}");
-            Console.WriteLine($"Employee total working hours  : {empTotalHour}\n");
-            Console.WriteLine($"\nEmployee Total Month Wage : {totalMonthWage}\n");
+            totalSalary = totalhour * empratePerHour;
+            Console.WriteLine("Total Employee wage is: " + totalSalary);
             Console.ReadLine();
         }
     }
-}
+    }
+
