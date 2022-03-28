@@ -7,7 +7,7 @@ namespace EmpWage
 {
     public class UC1
     {
-        public UC1()
+        public void UsCa1()
         {
             Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
 
