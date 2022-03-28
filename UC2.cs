@@ -1,34 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace EmpWage
 {
     public class UC2
     {
-        public UC2()
+        public void UsCa2()
         {
-            Console.WriteLine("Welcome to Employee Wage Compuatation Program\n");
-
-            const int isPresent = 1;
-            const int wagePerHour = 20;
-            int empWorkHour = 0;
-            int empDailyWage = 0;
+            Console.WriteLine("Welcome to UC2");
             Random random = new Random();
-            int check = random.Next(0, 2);
-            if (check == isPresent)
+            int is_fulltime = 1;
+            int totalWorkingHour = 8;
+            int wagePerHour = 20;
+            int dailyWage = 0;
+            int empCheck = random.Next(0, 2);
+
+            if (empCheck == is_fulltime)
             {
                 Console.WriteLine("Employee is Present");
-                empWorkHour = 8;
+                dailyWage = totalWorkingHour * wagePerHour;
+                Console.WriteLine("Total wage of a day: " + dailyWage);
             }
             else
             {
                 Console.WriteLine("Employee is Absent");
-                empWorkHour = 0;
+                dailyWage = totalWorkingHour * 0;
+                Console.WriteLine("Total wage of a day: " + dailyWage);
+
             }
-            empDailyWage = empWorkHour * wagePerHour;
-            Console.WriteLine($"\nEmployee Daily Wage : {empDailyWage}\n");
             Console.ReadLine();
         }
     }
